@@ -132,6 +132,17 @@ public class ColorPickerPreference
 		return bm;
 	}
 
+	/**
+	 * Set default color
+	 * @param color
+	 * @brief set default color for preference 
+	 *     notice: this extra method only sets color without triggering onPreferenceChange.
+	 */
+	public void setColor(int color) {
+		mValue = color;
+		setPreviewColor();
+	}
+	
 	@Override
 	public void onColorChanged(int color) {
 		if (isPersistent()) {
